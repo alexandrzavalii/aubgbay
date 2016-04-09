@@ -1,0 +1,37 @@
+<template name="item">
+  <div class="items col-xs-12 col-sm-6 col-md-6 col-lg-6 clearfix">
+     <div class="info-block block-info clearfix">
+          <div class="square-box pull-left">
+          <a href="{{pathFor 'itemPage' _id=__originalId}}" class="thumbnail">
+
+                {{#with FS.GetFile "images" images.[0]}}
+                <img class="media-object" src="{{url}}">
+                  {{/with}}
+    
+        </a>
+          </div>
+
+          <h5>{{name}} <p class="text-right"> {{price}} leva </p></h5>
+          <h6>{{body}}</h6>
+          <p class="text-right"><a href="{{link}}">By {{username}} </a></p>
+          <span class="hidden">Mystery</span>
+           <span class="hidden">Thriller</span>
+           <ul class="list-inline list-unstyled">
+   			<li><span><i class="glyphicon glyphicon-calendar"></i> {{formatTime createdAt}} </span></li>
+             <li>|</li>
+             <a href="{{pathFor 'itemPage' _id=__originalId}}"><span> <i class="glyphicon glyphicon-comment"></i> {{commentsCount}} comments</span></a>
+             {{#if author}}
+
+             <li>|</li>
+             <li>
+                 <a href="#" class="edit-item"><span><i class="fa fa-pencil"></i></span></a>
+             </li>
+             <li>
+                <a href="#" class="delete-item"><span><i class="fa fa-trash"></i></span></a>
+             </li>
+
+             {{/if}}
+ 			</ul>
+      </div>
+  </div>
+</template>

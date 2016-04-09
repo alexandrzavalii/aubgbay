@@ -1,0 +1,17 @@
+<template name="Comment">
+        <article class="comment">
+          <a class="comment-img" href="#non">
+            <img src="http://graph.facebook.com/{{facebookId}}/picture/?type=large" alt="" width="50" height="50">
+          </a>
+
+          <div class="comment-body {{read}} ">
+            <div class="text">
+              <p>{{body}}</p>
+            </div>
+            <p class="attribution">by <a href="https://www.facebook.com/app_scoped_user_id/{{facebookId}}">{{username}}</a> at {{formatTime createdAt}}</p>
+          </div>
+
+
+        </article>
+
+</template>

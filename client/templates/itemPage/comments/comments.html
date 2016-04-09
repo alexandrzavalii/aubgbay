@@ -1,0 +1,21 @@
+<template name="Comments">
+  <div class="row">
+    <div class="col-md-8">
+      {{#if currentUser}}
+                {{> addComment}}
+        {{/if}}
+    </div>
+    <div class="col-md-8">
+      <h2 class="page-header">Comments</h2>
+
+    {{#if comments}}
+        <section class="comments">
+          {{#each comments}}
+          {{> Comment}}
+          {{/each}}
+        </section>
+    {{/if}}
+    </div>
+
+  </div>
+</template>

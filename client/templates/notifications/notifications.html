@@ -1,0 +1,30 @@
+<template name="Notifications">
+  <div class="dropdown notificationsDropdown">
+  <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+    <span class="badge">{{#if notificationCount}} {{notificationCount}} {{/if}}</span><i class="glyphicon glyphicon-bell"></i>
+  </a>
+{{#if notificationCount}}
+  <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
+
+    <div class="notification-heading"><h4 class="menu-title">Notifications</h4>
+    </div>
+    <li class="divider"></li>
+   <div class="notifications-wrapper">
+       {{#each notifications}}
+               {{> notificationItem}}
+       {{/each}}
+   </div>
+    <li class="divider"></li>
+    <div class="notification-footer"></div>
+  </ul>
+{{/if}}
+</div>
+</template>
+
+<template name="notificationItem">
+  <a class="content" href="{{notificationItemPath}}">
+    <div class="notification-item">
+     <p class="item-info">{{commenterName}} commented on {{postName}} post</p>
+   </div>
+ </a>
+</template>

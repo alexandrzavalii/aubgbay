@@ -1,0 +1,75 @@
+<body>
+  {{renderPage}}
+</body>
+
+<template name="layout">
+    <div id="wrapper">
+    <div class="overlay"></div>
+    <!-- Sidebar -->
+    {{> nav}}
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+    <!-- SideBar Button -->
+              <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                  <span class="hamb-top"></span>
+                  <span class="hamb-middle"></span>
+                  <span class="hamb-bottom"></span>
+              </button>
+              {{> Notifications}}
+              <div class="container">
+                <div class="row">
+                  <center>
+                    {{#if currentUser}}
+                    {{>addModalItem}}
+                    <a href="#"  data-toggle="modal"  class="logoBox" data-target="#postModal"><img class="logo" src="/images/AUBGbay.jpg" /></a>
+                    {{else}}
+                        <a href="#" class="logoBox" id="facebook-login"><img class="logo" src="/images/AUBGbay.jpg" /></a>
+                    {{/if}}
+                  </center>
+                </div>
+                {{> yield}}
+
+                  <hr />
+
+                  <p>
+                    Copyright &copy; AUBG Bay, 2014-2016.
+                  </p>
+              </div>
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+  <script>
+
+  $(document).ready(function () {
+    var trigger = $('.hamburger'),
+        overlay = $('.overlay'),
+       isClosed = false;
+
+      trigger.click(function () {
+        hamburger_cross();
+      });
+
+      function hamburger_cross() {
+
+        if (isClosed == true) {
+          overlay.hide();
+          trigger.removeClass('is-open');
+          trigger.addClass('is-closed');
+          isClosed = false;
+        } else {
+          overlay.show();
+          trigger.removeClass('is-closed');
+          trigger.addClass('is-open');
+          isClosed = true;
+        }
+    }
+
+    $('[data-toggle="offcanvas"]').click(function () {
+          $('#wrapper').toggleClass('toggled');
+    });
+  });
+  </script>
+</template>

@@ -1,0 +1,40 @@
+<template name="Carousel">
+
+
+  {{#if images}}
+
+  <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+      <div class='carousel-outer'>
+          <div class='carousel-inner '>
+              {{#each  images}}
+
+                  <div class='item {{#if firstImage this}}active{{/if}}'>
+                      <img src='{{url}}' alt=''  />
+                  </div>
+              {{/each}}
+          </div>
+
+
+          <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+              <span class='glyphicon glyphicon-chevron-left'></span>
+          </a>
+          <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+              <span class='glyphicon glyphicon-chevron-right'></span>
+          </a>
+      </div>
+
+
+      <ol class='carousel-indicators '>
+          {{#each images}}
+              {{#with FS.GetFile "images" this}}
+              <li data-target='#carousel-custom' data-slide-to='{{@index}}'><img src='{{url}}' alt='' /></li>
+                {{/with}}
+          {{/each}}
+      </ol>
+  </div>
+  {{else}}
+  <center>
+    <h3>no images</h3>
+  </center>
+  {{/if}}
+</template>
