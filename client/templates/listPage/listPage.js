@@ -21,13 +21,26 @@ Template.search.events({
   $(e.target).toggleClass( "selected" );
 
   if($(e.target).hasClass("selected")){
-    $('input[type=text].form-control').attr("placeholder", '::'+Meteor.user().profile.name);
+    $('input[type=text].form-control').attr("placeholder", '::'+ Meteor.user().profile.name);
 
     ItemsIndex.getComponentMethods()
       .addProps('categoryFilter', [$(e.target).attr('id')]);
     }else {
           $('input[type=text].form-control').attr("placeholder", 'search here..');
-            ItemsIndex.getComponentMethods().removeProps();
+            ItemsIndex.getComponentMethods().removeProps('categoryFilter');
+    }
+  },
+  'click #Recent': function(e){
+  $(e.target).toggleClass( "selected" );
+
+  if($(e.target).hasClass("selected")){
+    $('input[type=text].form-control').attr("placeholder", '::'+Meteor.user().profile.name);
+
+    ItemsIndex.getComponentMethods()
+      .addProps('sortBy', [$(e.target).attr('id')]);
+    }else {
+          $('input[type=text].form-control').attr("placeholder", 'search here..');
+            ItemsIndex.getComponentMethods().removeProps('sortBy');
     }
   },
   'click #Popular': function(e){
@@ -37,10 +50,10 @@ Template.search.events({
 
     ItemsIndex
       .getComponentMethods()
-      .addProps( 'sortBy', 'Popular' );
+      .addProps( 'sortBy', [$(e.target).attr('id')] );
     } else {
       $('input[type=text].form-control').attr("placeholder", 'search here..');
-        ItemsIndex.getComponentMethods().removeProps();
+        ItemsIndex.getComponentMethods().removeProps('sortBy');
     }
   }
 })

@@ -24,7 +24,6 @@ aldeed:autoform
 fortawesome:fontawesome
 cfs:standard-packages
 cfs:gridfs
-cfs:ui
 cfs:graphicsmagick
 accounts-facebook
 service-configuration

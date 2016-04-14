@@ -301,7 +301,7 @@ html { height: 100%;}
 
 .info-block
 {
-    
+
     border-right:2px solid #E6E6E6;
     margin-bottom:25px
 }
@@ -311,7 +311,7 @@ html { height: 100%;}
 }
 .info-block.block-info
 {
-    padding-right:5px;
+    padding-right:15px;
     border-color:#E6E6E6;
 }
 .info-block.block-info .square-box

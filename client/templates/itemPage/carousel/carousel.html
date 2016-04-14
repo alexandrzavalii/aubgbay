@@ -1,16 +1,14 @@
 <template name="Carousel">
-
-
-  {{#if images}}
-
   <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
       <div class='carousel-outer'>
           <div class='carousel-inner '>
               {{#each  images}}
 
-                  <div class='item {{#if firstImage this}}active{{/if}}'>
-                      <img src='{{url}}' alt=''  />
-                  </div>
+                    <div class='item'>
+                        <img src='{{this.url}}' alt=''  />
+                    </div>
+
+
               {{/each}}
           </div>
 
@@ -26,15 +24,10 @@
 
       <ol class='carousel-indicators '>
           {{#each images}}
-              {{#with FS.GetFile "images" this}}
-              <li data-target='#carousel-custom' data-slide-to='{{@index}}'><img src='{{url}}' alt='' /></li>
-                {{/with}}
+
+              <li data-target='#carousel-custom' data-slide-to='{{@index}}'><img src='{{this.url}}' alt='' /></li>
+
           {{/each}}
       </ol>
   </div>
-  {{else}}
-  <center>
-    <h3>no images</h3>
-  </center>
-  {{/if}}
 </template>

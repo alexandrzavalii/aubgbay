@@ -2,7 +2,6 @@
   <div class="row">
   {{> search}}
   </div>
-
 </template>
 
 <template name="search">
@@ -11,13 +10,11 @@
             {{> EasySearch.Input index=itemIndex attributes=attributes}}
           <div class="col-md-12">
                                    <br />
-                <p>
-                  <a href="#"  class="labelLink" ><span id="Mine" class="label label-large label-pink arrowed-right">Mine</span></a>
-                  <a href="#" id="Popular" class="labelLink " ><span class="label label-large label-yellow arrowed-in">Popular</span></a>
-                  <a href="#" class="labelLink" ><span class="label label-large label-purple">Viewed</span></a>
-                  <a href="#" class="labelLink" ><span class="label label-large label-grey arrowed-in-right arrowed-in">Recent</span></a>
-                  <a href="#" class="labelLink" ><span class="label label-large label-light arrowed-in-right">Light</span></a>
-                </p>
+                <span id="Mine" class="label label-pill label-blue">Mine</span>
+                <span id="Popular" class="label label-pill label-red">Popular</span>
+                <span id="Recent" class="label label-pill label-orange">Recent</span>
+                <span id="Recent" class="label label-pill label-green">Cheap</span>
+                                  <br />
             </div>
 
       </div>

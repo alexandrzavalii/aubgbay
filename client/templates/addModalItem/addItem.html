@@ -9,12 +9,18 @@
                 <h4 class="modal-title" id="myModalLabel">Create a Post</h4>
               </div>
               <div class="modal-body">
-                
+
                 {{ #autoForm collection="Items" id="insertPostForm" type="insert" }}
                 {{> afQuickField placeholder="name of the item" name="name" rows=1}}
                 {{> afQuickField placeholder="9.99" name="price" rows=1}}
+                <div>
+                <span id="Mine" class="label label-pill label-blue">Mine</span>
+                <span id="Popular" class="label label-pill label-red">Popular</span>
+                <span id="Recent" class="label label-pill label-orange">Recent</span>
+                <span id="Recent" class="label label-pill label-green">Cheap</span>
+                </div>
                 {{> afQuickField name="body" placeholder="describe the product" rows=4}}
-                {{> afQuickField name="images"  collection="Images"}}
+                {{> afQuickField name="images"  collection="Images" label="Choose file" remove-label="Remove" }}
 
                 <button type="submit" class="insertPost btn btn-primary ">submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

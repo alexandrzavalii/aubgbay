@@ -3,16 +3,19 @@
      <div class="info-block block-info clearfix">
           <div class="square-box pull-left">
           <a href="{{pathFor 'itemPage' _id=__originalId}}" class="thumbnail">
+          {{#if images}}
 
                 {{#with FS.GetFile "images" images.[0]}}
                 <img class="media-object" src="{{url}}">
                   {{/with}}
-    
+              {{else}}
+                <img class="media-object" src="/images/no_image.gif">
+          {{/if}}
         </a>
           </div>
 
           <h5>{{name}} <p class="text-right"> {{price}} leva </p></h5>
-          <h6>{{body}}</h6>
+          <h6>{{truncateText body 150}}</h6>
           <p class="text-right"><a href="{{link}}">By {{username}} </a></p>
           <span class="hidden">Mystery</span>
            <span class="hidden">Thriller</span>
