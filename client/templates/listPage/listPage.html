@@ -5,19 +5,23 @@
 </template>
 
 <template name="search">
-  <center>
+  <center class="headBar">
+
       <div class="col-lg-12">
             {{> EasySearch.Input index=itemIndex attributes=attributes}}
-          <div class="col-md-12">
+          <div class="col-md-11">
                                    <br />
-                <span id="Mine" class="label label-pill label-blue">Mine</span>
-                <span id="Popular" class="label label-pill label-red">Popular</span>
-                <span id="Recent" class="label label-pill label-orange">Recent</span>
-                <span id="Recent" class="label label-pill label-green">Cheap</span>
+                <span id="mine" class="label label-pill label-blue">Mine</span>
+                <span id="books" class="label label-pill label-red category">Books</span>
+                <span id="electronics" class="label label-pill label-orange category">Electronics</span>
+                <span id="clothing" class="label label-pill label-green category">Clothing</span>
                                   <br />
             </div>
-
+            <div class="col-md-1">
+                    <span><i class="glyphicon glyphicon-sort-by-attributes-alt"></i></span>
+            </div>
       </div>
+
 </center>
 <br>
 <br>

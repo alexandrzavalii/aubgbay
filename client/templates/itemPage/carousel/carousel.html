@@ -1,33 +1,9 @@
 <template name="Carousel">
-  <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
-      <div class='carousel-outer'>
-          <div class='carousel-inner '>
-              {{#each  images}}
-
-                    <div class='item'>
-                        <img src='{{this.url}}' alt=''  />
-                    </div>
-
-
-              {{/each}}
-          </div>
-
-
-          <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
-              <span class='glyphicon glyphicon-chevron-left'></span>
-          </a>
-          <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
-              <span class='glyphicon glyphicon-chevron-right'></span>
-          </a>
-      </div>
-
-
-      <ol class='carousel-indicators '>
-          {{#each images}}
-
-              <li data-target='#carousel-custom' data-slide-to='{{@index}}'><img src='{{this.url}}' alt='' /></li>
-
-          {{/each}}
-      </ol>
-  </div>
+    <center>
+        <div class="owl-carousel">
+          {{#each  images}}
+        <div class="item"><img src='{{this.url}}' alt=''  /></div>
+        {{/each}}
+        </div>
+  </center>
 </template>

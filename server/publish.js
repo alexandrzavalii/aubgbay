@@ -3,7 +3,7 @@ Meteor.publish("users", function (id) {
 });
 
 Meteor.publish('items', function(){
-   return Items.find({});
+   return Items.find({}, {sort: {createdAt: -1}});
 });
 Meteor.publish("images", function () {
   return Images.find({});
@@ -17,7 +17,7 @@ Meteor.publish('notifications', function(options){
 
 Meteor.publishComposite('oneItemWithImages', function(itemId) {
         return {
-            find: function() {        
+            find: function() {
                 return Items.find({_id: itemId});
             },
             children: [

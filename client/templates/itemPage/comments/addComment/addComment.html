@@ -2,7 +2,7 @@
       <div class="widget-area no-padding blank">
       <div class="status-upload">
         {{ #autoForm collection="Comments" id="insertCommentForm" type="insert" }}
-          {{> afQuickField name="body" rows=1 placeholder="What do you think about it?"}}
+          {{> afQuickField name="body" id="message" rows=1 placeholder="What do you think about it?"}}
 
           {{> afQuickField name="itemId" type="hidden" value=_id rows=1 placeholder="What do you think about it?"}}
           <ul>
@@ -12,7 +12,9 @@
             <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
           </ul>
           <button type="submit" class="insertComment btn btn-success green"><i class="fa fa-share"></i> Post</button>
+          <button  id="sendPrivate" class="btn btn-primary"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Send Private</button>
         {{/autoForm}}
+
       </div><!-- Status Upload  -->
     </div><!-- Widget Area -->
 </template>

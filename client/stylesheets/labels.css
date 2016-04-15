@@ -4,6 +4,19 @@
     background-color: #3282DD;
     background-color: #86B52A;
     */
+.books{
+    color: #EB383B;
+}
+.electronics{
+  color: #EFB12A;
+}
+.clothing{
+  color: #86B52A;
+}
+.label {
+  cursor: pointer;
+  cursor: hand;
+}
 .label-red {
         background-color: white;
         color: #EB383B;

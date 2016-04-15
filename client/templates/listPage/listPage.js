@@ -17,43 +17,32 @@ Template.search.helpers({
 
 });
 Template.search.events({
-  'click #Mine': function(e){
+  'click #mine': function(e){
   $(e.target).toggleClass( "selected" );
 
   if($(e.target).hasClass("selected")){
     $('input[type=text].form-control').attr("placeholder", '::'+ Meteor.user().profile.name);
-
-    ItemsIndex.getComponentMethods()
-      .addProps('categoryFilter', [$(e.target).attr('id')]);
+    ItemsIndex.getComponentMethods().addProps('own', true);
     }else {
           $('input[type=text].form-control').attr("placeholder", 'search here..');
-            ItemsIndex.getComponentMethods().removeProps('categoryFilter');
+            ItemsIndex.getComponentMethods().removeProps('own');
     }
   },
-  'click #Recent': function(e){
+  'click .category': function(e){
+    $( ".category" ).each(function(index) {
+      if(($(this).hasClass("selected")) && $(e.target).attr('id') != $(this).attr('id'))
+      $(this).removeClass( "selected" )
+    });
   $(e.target).toggleClass( "selected" );
 
   if($(e.target).hasClass("selected")){
-    $('input[type=text].form-control').attr("placeholder", '::'+Meteor.user().profile.name);
-
-    ItemsIndex.getComponentMethods()
-      .addProps('sortBy', [$(e.target).attr('id')]);
+    $('input[type=text].form-control').attr("placeholder", '::'+ $(e.target).attr('id'));
+    ItemsIndex.getComponentMethods().addProps('category', $(e.target).attr('id'));
+    //ItemsIndex.getComponentMethods().addProps('sortBy', [$(e.target).attr('id')]);
     }else {
-          $('input[type=text].form-control').attr("placeholder", 'search here..');
-            ItemsIndex.getComponentMethods().removeProps('sortBy');
-    }
-  },
-  'click #Popular': function(e){
-    $(e.target).toggleClass( "selected" );
-    if($(e.target).hasClass("selected")){
-    $('input[type=text].form-control').attr("placeholder", '::Popular');
-
-    ItemsIndex
-      .getComponentMethods()
-      .addProps( 'sortBy', [$(e.target).attr('id')] );
-    } else {
-      $('input[type=text].form-control').attr("placeholder", 'search here..');
-        ItemsIndex.getComponentMethods().removeProps('sortBy');
+        $('input[type=text].form-control').attr("placeholder", 'search here..');
+          ItemsIndex.getComponentMethods().removeProps('category');
     }
   }
+
 })

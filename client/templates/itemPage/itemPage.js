@@ -4,11 +4,23 @@ Template.itemPage.onCreated(function(){
     self.autorun(function() {
       self.subscribe('oneItemWithImages', id);
     });
+
 });
 
 Template.itemPage.events({
-'submit form': function(e){
-  console.log('form');
+'click #sendPrivate': function(event){
+  event.preventDefault();
+  if($('textarea#message').val()){
+    $("#insertCommentForm").removeClass('has-error');
+    $( "#insertCommentForm span.help-block" ).text('');
+  }else{
+    $("#insertCommentForm").addClass('has-error');
+    $( "#insertCommentForm span.help-block" ).text('Body is required');
+    console.log('event,',event.target);
+    console.log('<span class="help-block">Body is required</span>');
+  }
+
+
   FB.ui({
        app_id:'985251324890486',
        method: 'send',
