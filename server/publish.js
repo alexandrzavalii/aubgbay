@@ -1,6 +1,9 @@
 Meteor.publish("users", function (id) {
     return Meteor.users.find({_id: id});
 });
+Meteor.publish("userStatus", function() {
+  return Meteor.users.find({ "status.online": true });
+});
 
 Meteor.publish('items', function(){
    return Items.find({}, {sort: {createdAt: -1}});

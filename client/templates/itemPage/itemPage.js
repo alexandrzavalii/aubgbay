@@ -4,6 +4,7 @@ Template.itemPage.onCreated(function(){
     self.autorun(function() {
       self.subscribe('oneItemWithImages', id);
     });
+    
 
 });
 
