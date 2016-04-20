@@ -16,11 +16,13 @@
          <div class="{{category}}">
            {{category}}
          </div>
-          <h5>{{name}} <p class="text-right"> {{price}} leva </p></h5>
-          <h6>{{truncateText body 150}}</h6>
+          <h5>{{name}} <p class="text-right"> {{formatMoney price}}  </p></h5>
+          <span class="item-body">{{truncateText body 100}}</span>
           <p class="text-right"><a href="{{link}}">By {{username}} </a></p>
           <span class="hidden">Mystery</span>
            <span class="hidden">Thriller</span>
+           <div class="row">
+             <div class="col-md-12 itemNavigation">
            <ul class="list-inline list-unstyled">
    			<li><span><i class="glyphicon glyphicon-calendar"></i> {{formatTime createdAt}} </span></li>
              <li>|</li>
@@ -36,10 +38,12 @@
              </li>
              {{else}}
              <li>|</li>
-               <a href="#" class="edit-item"><span><i class="fa fa-commenting" aria-hidden="true"></i> contact seller</span></a>
+               <a href="#" class="edit-item"><span><i class="fa fa-commenting" aria-hidden="true"></i></span></a>
              
              {{/if}}
- 			</ul>
+ 			    </ul>
+             </div>
+           </div>
       </div>
   </div>
 </template>

@@ -2,15 +2,17 @@ Meteor.publish("users", function (id) {
     return Meteor.users.find({_id: id});
 });
 Meteor.publish("userStatus", function() {
-  return Meteor.users.find({ "status.online": true });
+  return Meteor.users.find({},{fields: {'services.facebook': 1, 'status.online': 1}});
 });
 
 Meteor.publish('items', function(){
    return Items.find({}, {sort: {createdAt: -1}});
 });
+
 Meteor.publish("images", function () {
   return Images.find({});
 });
+
 Meteor.publish('commentsCount', function(options){
    return commentsCount.find({});
 });

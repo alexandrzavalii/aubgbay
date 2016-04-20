@@ -1,5 +1,5 @@
 <template name="Comment">
-        <article class="comment">
+        <article class="comment {{#if checkUserStatus this}} useronline{{/if}}">
           <a class="comment-img" href="#non">
             <img src="http://graph.facebook.com/{{facebookId}}/picture/?type=large" alt="" width="50" height="50">
           </a>

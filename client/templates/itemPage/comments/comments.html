@@ -1,10 +1,5 @@
 <template name="Comments">
   <div class="row">
-    <div class="col-md-12">
-      {{#if currentUser}}
-                {{> addComment}}
-        {{/if}}
-    </div>
     <div class="col-md-8">
       <h2 class="page-header">Comments</h2>
 
@@ -16,6 +11,10 @@
         </section>
     {{/if}}
     </div>
-
+    <div class="col-md-12">
+      {{#if currentUser}}
+                {{> addComment}}
+        {{/if}}
+    </div>
   </div>
 </template>

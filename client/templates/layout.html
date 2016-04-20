@@ -16,25 +16,13 @@
                   <span class="hamb-bottom"></span>
               </button>
               {{> Notifications}}
-              <div class="container">
-                <div class="row">
-                  <center>
-                    {{#if currentUser}}
-                    {{>addModalItem}}
-                    <a href="#"  data-toggle="modal"  class="logoBox" data-target="#postModal"><img class="logo" src="/images/AUBGbay.jpg" /></a>
-                    {{else}}
-                        <a href="#" class="logoBox" id="facebook-login"><img class="logo" src="/images/AUBGbay.jpg" /></a>
-                    {{/if}}
-                  </center>
-                </div>
+              
                 {{> yield}}
-
                   <hr />
-
                   <p>
                     Copyright &copy; AUBG Bay, 2014-2016.
                   </p>
-              </div>
+              
 
     </div>
     <!-- /#page-content-wrapper -->

@@ -1,5 +1,5 @@
 <template name="itemPage">
-
+<div class="container">
   {{#if name}}
   <div class="row">
       <div class="col-md-12">
@@ -23,7 +23,7 @@
             <div class="panel-body">
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="tab1default">
-                      <h3>{{name}} : {{price}}bgn</h3>
+                      <h3>{{name}} : {{formatMoney price}}</h3>
                       <p>
                         {{body}}
                       </p>
@@ -41,4 +41,6 @@
   {{else}}
       {{> loading}}
 {{/if}}
+
+</div>
 </template>

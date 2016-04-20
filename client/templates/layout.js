@@ -1,9 +1,10 @@
 Template.layout.onCreated(function(){
     var self = this;
     var id = Meteor.userId();
-
+    
     self.autorun(function() {
        self.subscribe('users', id);
+       self.subscribe('userStatus');
     });
 });
 Template.layout.events({

@@ -12,7 +12,7 @@
 
                 {{ #autoForm collection="Items" id="insertPostForm" type="insert" }}
                 {{> afQuickField placeholder="name of the item" name="name" rows=1}}
-                {{> afQuickField placeholder="9.99" name="price" rows=1}}
+                {{> afQuickField placeholder="9.99" name="price" rows=1 }}
                       {{> afQuickField name="category"}}
                 {{> afQuickField name="body" placeholder="describe the product" rows=4}}
                 {{> afQuickField name="images"  collection="Images" label="Choose file" remove-label="Remove" }}

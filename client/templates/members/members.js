@@ -1,8 +1,5 @@
 Template.members.onCreated(function(){
-    var self = this;
-    self.autorun(function() {
-       self.subscribe('userStatus');
-    });
+  
 });
 
 Template.members.helpers({
