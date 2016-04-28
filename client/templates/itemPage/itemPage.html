@@ -17,6 +17,13 @@
             <div class="panel-heading">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab1default" data-toggle="tab">Description</a></li>
+                        <li>
+                          <a>
+                            <div class="{{category}}">
+                              {{category}}
+                            </div>
+                          </a>
+                        </li>
                         <li><a>by {{username}}</a></li>
                     </ul>
             </div>
@@ -34,10 +41,10 @@
         </div>
         {{> Comments}}
     </div>
+</div>
 
-
-      </div>
   </div>
+  {{> chatPopup userId}}
   {{else}}
       {{> loading}}
 {{/if}}

@@ -1,6 +1,9 @@
-Meteor.publish("users", function (id) {
-    return Meteor.users.find({_id: id});
+Meteor.publish("chat", function (toUserId, fromUserId) {
+    return Chat.find({toUserId: toUserId, fromUserId: fromUserId},{});
 });
+Meteor.publish('allChat', function(userId){
+  return  Chat.find({$or: [{fromUserId: userId},{toUserId: userId}]});
+})
 Meteor.publish("userStatus", function() {
   return Meteor.users.find({},{fields: {'services.facebook': 1, 'status.online': 1}});
 });

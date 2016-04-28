@@ -1,29 +1,34 @@
 <template name="chat">
+
     <div class="tile tile-alt" id="messages-main">
         <div class="ms-menu">
-            <div class="list-group lg-alt">
+            <div class=" list-group lg-alt">
+              {{#each users}}
                 <a class="list-group-item media" href="">
                     <div class="lv-avatar pull-left">
-                        <img src="http://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="img-avatar">
+                      <img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?type=large" alt="" class="img-avatar">
                     </div>
                     <div class="media-body">
-                        <div class="list-group-item-heading">Kane Williams</div>
+                        <div class="list-group-item-heading">{{services.facebook.name}}</div>
                         <small class="list-group-item-text c-gray">Suspendisse justo nulla luctus nec</small>
                     </div>
                 </a>
+              {{/each}}
             </div>
-    
-            
         </div>
-        
+
         <div class="ms-body">
- 
+
             <div class="action-header clearfix">
                 <div class="showUsers visible-xs" id="ms-menu-trigger">
                    <i class="fa fa-users" aria-hidden="true"></i>
-                </div> 
+                </div>
             </div>
-         
+            {{#each users}}
+              {{#each messages this}}
+                  message
+              {{/each}}
+            {{/each}}
             <div class="message-feed media">
                 <div class="pull-left">
                     <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="img-avatar">
@@ -35,7 +40,7 @@
                     <small class="mf-date"><i class="fa fa-clock-o"></i> 20/02/2015 at 09:00</small>
                 </div>
             </div>
-            
+
             <div class="message-feed right">
                 <div class="pull-right">
                     <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="img-avatar">
@@ -47,7 +52,7 @@
                     <small class="mf-date"><i class="fa fa-clock-o"></i> 20/02/2015 at 09:30</small>
                 </div>
             </div>
-            
+
             <div class="message-feed media">
                 <div class="pull-left">
                     <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="img-avatar">
@@ -59,7 +64,7 @@
                     <small class="mf-date"><i class="fa fa-clock-o"></i> 20/02/2015 at 09:33</small>
                 </div>
             </div>
-            
+
             <div class="message-feed right">
                 <div class="pull-right">
                     <img src="http://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="img-avatar">
@@ -71,7 +76,7 @@
                     <small class="mf-date"><i class="fa fa-clock-o"></i> 20/02/2015 at 10:10</small>
                 </div>
             </div>
-            
+
             <div class="message-feed media">
                 <div class="pull-left">
                     <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="img-avatar">
@@ -83,7 +88,7 @@
                     <small class="mf-date"><i class="fa fa-clock-o"></i> 20/02/2015 at 10:24</small>
                 </div>
             </div>
-            
+
             <div class="msb-reply">
                 <textarea placeholder="What's on your mind..."></textarea>
                 <button><i class="fa fa-paper-plane-o"></i></button>

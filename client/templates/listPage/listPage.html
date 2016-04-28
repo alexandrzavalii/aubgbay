@@ -1,5 +1,5 @@
 <template name = "listPage">
-  {{> mainButton}}  
+  {{> mainButton}}
   <div class="container">
       <div class="row">
       {{> search}}
@@ -14,15 +14,14 @@
             {{> EasySearch.Input index=itemIndex attributes=attributes}}
           <div class="col-md-11">
                                    <br />
+                {{#if currentUser}}
                 <span id="mine" class="label label-pill label-blue">Mine</span>
+                {{/if}}
                 <span id="books" class="label label-pill label-red category">Books</span>
                 <span id="electronics" class="label label-pill label-orange category">Electronics</span>
                 <span id="clothing" class="label label-pill label-green category">Clothing</span>
-                  <span id="other" class="label label-pill label-blue category">Other</span>
+                <span id="other" class="label label-pill label-blue category">Other</span>
                                   <br />
-            </div>
-            <div class="col-md-1">
-                    <span><i class="glyphicon glyphicon-sort-by-attributes-alt"></i></span>
             </div>
       </div>
 
@@ -44,6 +43,6 @@
   {{#EasySearch.IfNoResults index=itemIndex}}
     <div class="no-results">No results found!</div>
   {{/EasySearch.IfNoResults}}
-  
+
 
 </template>

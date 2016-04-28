@@ -13,27 +13,30 @@
           <li>
               <a href="/">Home</a>
           </li>
+          {{#if currentUser}}
           <li>
              <a href="#"  data-toggle="modal"  class="logoBox" data-target="#postModal">Add Item</a>
           </li>
+          {{/if}}
           <li>
               <a href="{{pathFor route='members'}}">Members</a>
           </li>
+          {{#if currentUser}}
           <li>
               <a href="{{pathFor route='chat'}}">Chat</a>
           </li>
+          {{/if}}
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filters <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li class="dropdown-header">Select filter</li>
+              {{#if currentUser}}
               <li><a href="#">Mine</a></li>
+              {{/if}}
               <li><a href="#">Books</a></li>
               <li><a href="#">Electronics</a></li>
               <li><a href="#">Cloathing</a></li>>
             </ul>
-          </li>
-          <li>
-              <a href="#">Services</a>
           </li>
           <li>
               <a href="#">Contact</a>
