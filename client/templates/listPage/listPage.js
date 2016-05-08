@@ -13,6 +13,11 @@ Template.search.helpers({
       class: 'form-control',
    };
  },
+ loadMore : function(){
+   return {
+     class: 'btn btn-default'
+   }
+ },
   itemIndex: () => ItemsIndex // instanceof EasySearch.Index
 
 });

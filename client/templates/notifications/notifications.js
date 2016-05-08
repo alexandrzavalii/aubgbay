@@ -18,9 +18,6 @@ Template.Notifications.helpers({
         });
     },
     notificationCount: function() {
-  /*   Meteor.setTimeout(function(){
-            Meteor.call('removeNotifications', FlowRouter.getParam('id'));
-        },1000); */
         return Notifications.find({
             userId: Meteor.userId(),
             read: false,

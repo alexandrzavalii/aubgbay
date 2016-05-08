@@ -5,39 +5,24 @@
 <template name="layout">
     <div id="wrapper">
     <div class="overlay"></div>
-    <!-- Sidebar -->
     {{> nav}}
-    <!-- Page Content -->
     <div id="page-content-wrapper">
-    <!-- SideBar Button -->
               <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
                   <span class="hamb-top"></span>
                   <span class="hamb-middle"></span>
                   <span class="hamb-bottom"></span>
               </button>
               {{> Notifications}}
-
                 {{> yield}}
-                  <hr />
                   <p>
                     <center>
-                                          Copyright &copy; AUBG Bay, 2014-2016.
+                      <p>Copyright © 2014 <a href="#" target="blank">AUBGbay</a> / All rights reserved.</p>
                     </center>
-
                   </p>
-
-
     </div>
-    <!-- /#page-content-wrapper -->
-
 </div>
-<!-- /#wrapper -->
-
-
   <script>
   $(document).ready(function () {
-
-
 
     var trigger = $('.hamburger'),
         overlay = $('.overlay'),

@@ -3,13 +3,10 @@
       <div class="status-upload">
         {{ #autoForm collection="Comments" id="insertCommentForm" type="insert" }}
           {{> afQuickField name="body" id="message" rows=1 placeholder="What do you think about it?"}}
-
           {{> afQuickField name="itemId" type="hidden" value=_id rows=1 placeholder="What do you think about it?"}}
-
           <button type="submit" class="insertComment btn btn-success green"><i class="fa fa-share"></i> Post</button>
-          <button  id="sendPrivate" class="btn btn-primary"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Send Private</button>
         {{/autoForm}}
 
-      </div><!-- Status Upload  -->
+      </div>
     </div><!-- Widget Area -->
 </template>

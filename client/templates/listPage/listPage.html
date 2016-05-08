@@ -34,8 +34,9 @@
       {{> item}}
     {{/EasySearch.Each}}
   </div>
-
-  {{> EasySearch.LoadMore index=itemIndex}}
+<center>
+    {{> EasySearch.LoadMore index=itemIndex attributes=loadMore}}
+</center>
   {{#EasySearch.IfSearching index=itemIndex}}
   <div>Searching...</div>
   {{/EasySearch.IfSearching}}
